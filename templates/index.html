@@ -15,25 +15,27 @@
 
 {% if phrase: %}
     {% for letter in phrase.lower() %}
-            <div class="d-inline-block m-4">
-                {% if letter == ' ': %}
-                    <div style="width: 50px;"></div>
-                {% else %}
-                    {% for i in range(0, 3) %}  
-                        <div>
-                            {% for j in range(0, 2) %}
-                                {% if arrays[letter][i][j]: %}
-                                    <div style="background-color: black; border-radius: 50px; width: 50px; height: 50px; display: inline-block;"></div>
-                                {% else %}
-                                    <div style="background-color: #ccc; border-radius: 50px; width: 50px; height: 50px; display: inline-block;"></div>
-                                {% endif %}
-                            {% endfor %}
-                        </div>
-                    {% endfor %}
-                    <p style="text-align: center;">{{letter.upper()}}</p>
-                {% endif %}
-            </div>
-    {% endfor %}
+        {%if letter in keys_arrays or letter == ' ':%}
+                <div class="d-inline-block m-4">
+                    {% if letter == ' ': %}
+                        <div style="width: 50px;"></div>
+                    {% else %}
+                        {% for i in range(0, 3) %}  
+                            <div>
+                                {% for j in range(0, 2) %}
+                                    {% if arrays[letter][i][j]: %}
+                                        <div style="background-color: black; border-radius: 50px; width: 50px; height: 50px; display: inline-block;"></div>
+                                    {% else %}
+                                        <div style="background-color: #ccc; border-radius: 50px; width: 50px; height: 50px; display: inline-block;"></div>
+                                    {% endif %}
+                                {% endfor %}
+                            </div>
+                        {% endfor %}
+                        <p style="text-align: center;">{{letter.upper()}}</p>
+                    {% endif %}
+                </div>
+        {% endif %}
+    {%endfor%}    
 {%endif%}
 
 {%endblock%}

@@ -7,13 +7,15 @@ app = Flask(__name__)
 def index():
     arrays = braille()
 
+    keys_arrays = arrays.keys() 
+
     phrase = ''
     if request.method == 'POST':
         phrase = request.form['phrase']
         
-        return render_template('index.html', arrays=arrays, phrase=phrase)    
+        return render_template('index.html', arrays=arrays, phrase=phrase, keys_arrays=keys_arrays)    
 
-    return render_template('index.html', arrays=arrays)
+    return render_template('index.html', arrays=arrays, keys_arrays=keys_arrays)
 
 
 if __name__ == '__main__':
