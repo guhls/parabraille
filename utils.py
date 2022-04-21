@@ -28,4 +28,15 @@ def braille():
       'x' : np.array([[1, 1], [0, 0], [1, 1]], dtype=bool),
       'y' : np.array([[1, 1], [0, 1], [1, 1]], dtype=bool),
       'z' : np.array([[1, 0], [0, 1], [1, 1]], dtype=bool),
+      
+      '1' : [np.array([[0, 1], [0, 1], [1, 1]], dtype=bool), np.array([[1, 0], [0, 0], [0, 0]], dtype=bool)],
+      '2' : [np.array([[0, 1], [0, 1], [1, 1]], dtype=bool), np.array([[1, 0], [1, 0], [0, 0]], dtype=bool)],
+      '3' : [np.array([[0, 1], [0, 1], [1, 1]], dtype=bool), np.array([[1, 1], [0, 0], [0, 0]], dtype=bool)],
+      '4' : [np.array([[0, 1], [0, 1], [1, 1]], dtype=bool), np.array([[1, 1], [1, 0], [0, 0]], dtype=bool)],
+      '5' : [np.array([[0, 1], [0, 1], [1, 1]], dtype=bool), np.array([[1, 0], [0, 1], [0, 0]], dtype=bool)],
+      '6' : [np.array([[0, 1], [0, 1], [1, 1]], dtype=bool), np.array([[1, 1], [1, 0], [0, 0]], dtype=bool)],
+      '7' : [np.array([[0, 1], [0, 1], [1, 1]], dtype=bool), np.array([[1, 1], [1, 1], [0, 0]], dtype=bool)],
+      '8' : [np.array([[0, 1], [0, 1], [1, 1]], dtype=bool), np.array([[1, 0], [1, 1], [0, 0]], dtype=bool)],
+      '9' : [np.array([[0, 1], [0, 1], [1, 1]], dtype=bool), np.array([[0, 1], [1, 0], [0, 0]], dtype=bool)],
+      '0' : [np.array([[0, 1], [0, 1], [1, 1]], dtype=bool), np.array([[0, 1], [1, 1], [0, 0]], dtype=bool)],
   }

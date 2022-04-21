@@ -18,8 +18,27 @@
         {%if letter in keys_arrays or letter == ' ':%}
                 <div class="d-inline-block m-4">
                     {% if letter == ' ': %}
-                        <div style="width: 50px;"></div>
-                    {% else %}
+                        <div style="width: 25px;"></div>
+                    {% elif letter.isnumeric(): %}
+                        {% for array in arrays[letter]: %}
+                            <div class="d-inline-block">
+                                {% for i in range(0, 3) %}  
+                                    <div>
+                                        {% for j in range(0, 2) %}
+                                            {% if array[i][j]: %}
+                                                <div style="background-color: black; border-radius: 50px; width: 50px; height: 50px; display: inline-block;"></div>
+                                            {% else %}
+                                                <div style="background-color: #ccc; border-radius: 50px; width: 50px; height: 50px; display: inline-block;"></div>
+                                            {% endif %}
+                                        {% endfor %}
+                                    </div>
+                                {% endfor %}
+                            </div>
+                            {% if loop.index != loop.length: %}
+                                <div style="width: 10px;" class="d-inline-block"></div>
+                            {% endif %}
+                        {% endfor %}
+                    {% else: %}
                         {% for i in range(0, 3) %}  
                             <div>
                                 {% for j in range(0, 2) %}
@@ -31,8 +50,8 @@
                                 {% endfor %}
                             </div>
                         {% endfor %}
-                        <p style="text-align: center;">{{letter.upper()}}</p>
                     {% endif %}
+                    <p style="text-align: center;">{{letter.upper()}}</p>
                 </div>
         {% endif %}
     {%endfor%}    
